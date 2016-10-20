@@ -4,11 +4,8 @@ Convert seconds to human-speak
 debug = False
 
 if debug == True:
-    print "minute: 60 seconds"
-    print "hour: 3,600 seconds"
-    print "day: 86,400 seconds"
-    print "week: 604,800 seconds"
-    print "month (30 days): 2,592,000 seconds"
+    print "minute: 60 seconds, hour: 3,600 seconds, day: 86,400 seconds"
+    print "week: 604,800 seconds, month (30 days): 2,592,000 seconds"
     print "year (365 days): 31,536,000 seconds"
     print "decade (365 days x 10): 315,360,000 seconds"
     print "century (365 days x 10 x 10): 3,153,600,000 seconds"
