@@ -1,5 +1,5 @@
 """
-Convert seconds to human-speak
+Convert seconds to human-speak.
 """
 debug = False
 
