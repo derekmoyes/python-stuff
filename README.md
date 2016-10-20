@@ -5,3 +5,6 @@ Probably nothing too exciting here, unless you are learning, too.
 
 # convert-seconds.py
 Convert seconds to human-speak.
+
+# hangman
+Simple hangman example.
