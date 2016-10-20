@@ -1,5 +1,10 @@
 """
-Convert seconds to human-speak.
+Convert seconds to human-speak. I modified another example program I had written
+  for a training class I took. This was to fulfill a challenge posed to me by a
+  co-worker. It may not be the most elegant way to do it, and after I finished,
+  I realized there might be a python library to do this. While I didn't find
+  one, I did locate this page, which has some other interesting solutions.
+  http://stackoverflow.com/questions/4048651/python-function-to-convert-seconds-into-minutes-hours-and-days
 """
 debug = False
 
