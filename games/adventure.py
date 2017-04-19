@@ -28,7 +28,6 @@ def deathText():
               "Well, that certainly wasn't a good idea!",
               "That really hurt.",
               "Ow."]
-    deathName = playerName.center(11, " ")
     tombstone = """
         _.---,._,'
        /' _.--.<
