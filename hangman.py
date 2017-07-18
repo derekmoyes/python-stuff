@@ -6,16 +6,16 @@ Simple hangman example.
 import time
 
 # welcome the user
-name = raw_input("What is your name? ")
+name = input("What is your name? ")
 
-print "Hello, ", name, "Time to play hangman!"
+print("Hello, ", name, "Time to play hangman!")
 
-print "\n"
+print("\n")
 
 # wait for 1 second
 time.sleep(1)
 
-print "Start guessing..."
+print("Start guessing...")
 time.sleep(0.5)
 
 # set the secret
@@ -38,23 +38,23 @@ while turns > 0:
 
         # see
         if char in guesses:
-            print char,
+            print(char, " ", end='');
         else:
-            print "-",
+            print("- ", end='');
             failed += 1
 
     if failed == 0:
-        print "\n", name, "you won!"
+        print("\n", name, "you won!")
 
         # exit the script
         break
 
     print
 
-    guess = raw_input("guess a character: ")
+    guess = input("\nguess a character: ")
 
     if len(guess) > 1:
-        print "Hey, no cheating!"
+        print("Hey, no cheating!")
         guess = "2"
 
     guesses += guess
@@ -63,9 +63,9 @@ while turns > 0:
 
         # decrease
         turns -= 1
-        print "Wrong\n"
-        print "You have", + turns, "guesses left."
+        print("Wrong\n")
+        print("You have", + turns, "guesses left.")
         if turns == 0:
-            print name, "you lose!\n"
+            print(name, "you lose!\n")
 
 # end
