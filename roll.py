@@ -9,7 +9,6 @@ Python 2.7 PEP8 game
 import random
 import sys
 
-roller = int(raw_input("How many dice should I roll? "))
 
 min = 1
 max = 6
@@ -17,6 +16,7 @@ max = 6
 roll_again = "yes"
 
 while roll_again == "yes" or roll_again == "y":
+    roller = int(raw_input("How many dice should I roll? "))
     print("Rolling the dice...")
     print("The values are...")
     print("Let me roll those " + str(roller) + " dice for you!")
