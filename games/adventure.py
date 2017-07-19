@@ -10,7 +10,7 @@ greeting = """You awake in what appears to be the basement of your local pub.
 
 Your head hurts and you seem to be alone.
 
-As the windows are painted over, you can't tell exactly what time it is.
+As the only window appears painted over, you can't tell whether it's night or day.
 
 Oh, and your watch seems to be missing.\n"""
 nouns = ["cue", "door", "exit", "kitchen", "stairs", "window"]
@@ -71,7 +71,7 @@ print(greeting)
 while not done:
     if currentLocation == "basement":
         locationtext = "You seem to be in the basement. You see stairs going " \
-                       "up, and a door on the left."
+                       "up, a small window, and a door on the left."
         if equipped == "":
             locationtext = locationtext + " There is a broken pool cue here."
     if currentLocation == "basementCloset":
