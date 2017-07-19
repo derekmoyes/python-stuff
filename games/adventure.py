@@ -28,6 +28,11 @@ def deathText():
               "Well, that certainly wasn't a good idea!",
               "That really hurt.",
               "Ow."]
+#    padChars = ((11 - len(playerName))/2)
+#    deathName = playerName
+#    while (padChars > 0):
+#        padChars -= 1
+#        deathName = str(" " + deathName + " ")
     tombstone = """
         _.---,._,'
        /' _.--.<
@@ -41,7 +46,7 @@ def deathText():
         |                 .'         `.
         |                 |  R  I  P  |
         |                 |           |
-        |                 |""" + deathName + "|" + """
+        |                 |""" + str.center(playerName, 11) + "|" + """
          \              \\\\|           |//               jgs
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 """
