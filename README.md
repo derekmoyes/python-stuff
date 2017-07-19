@@ -1,15 +1,16 @@
 # python-stuff
 Random python things that I've written, while learning. Probably nothing exciting here, unless you are learning, too.
 
-## convert-seconds.py
-Convert seconds to human-speak.
-
-# Games:
-## games/adventure.py
+## Games:
+### games/adventure.py
 Simple text adventure.
 
-## hangman.py
+### hangman.py
 Simple hangman example.
 
-## roll.py 
+### roll.py 
 Simple dice roller example. Python 2.7 PEP8 game
+
+## Utilities
+### convert-seconds.py
+Convert seconds to human-speak.
