@@ -4,7 +4,7 @@ Random python things that I've written, while learning. Probably nothing excitin
 ## convert-seconds.py
 Convert seconds to human-speak.
 
-Games:
+# Games:
 ## games/adventure.py
 Simple text adventure.
 
