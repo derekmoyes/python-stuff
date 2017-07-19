@@ -14,8 +14,8 @@ As the windows are painted over, you can't tell exactly what time it is.
 
 Oh, and your watch seems to be missing.\n"""
 nouns = ["cue", "door", "exit", "kitchen", "stairs", "window"]
-verbs = ["drop", "climb", "close", "go", "grab", "look", "open", "put", "take"]
-# new verbs: run, get, enter
+verbs = ["climb", "close", "go", "grab", "look", "open", "put", "take"]
+# new verbs: run, get, enter, drop
 
 def clearScreen():
     print ("\n" * 100)
@@ -27,7 +27,8 @@ def deathText():
     deaths = ["Ow, that left a mark.",
               "Well, that certainly wasn't a good idea!",
               "That really hurt.",
-              "Ow."]
+              "Ow.",
+              "Huh."]
 #    padChars = ((11 - len(playerName))/2)
 #    deathName = playerName
 #    while (padChars > 0):
@@ -50,7 +51,7 @@ def deathText():
          \              \\\\|           |//               jgs
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 """
-    print(tombstone + random.choice(deaths) + "\nYou are dead.")
+    print(tombstone + random.choice(deaths) + " You are dead.")
     return
 
 def failText():
@@ -95,7 +96,7 @@ while not done:
     thing = ""
     command = raw_input("What do you do?\n>>> ")
     if debug == True: print(command)
-    if (command == "" or command == "help" or command == "Help"):
+    if (command == "" or command == "help" or command == "Help" or command == "help "):
         print(gameHelp)
         continue
     if command == "look":
@@ -111,6 +112,9 @@ while not done:
                 continue
         if word in nouns:
             thing = word
+        if word not in verbs and word not in nouns:
+            print("I don't understand what " + word + " means, sorry!")
+            continue
 
     if currentLocation == "basement":
         if action == "climb":
