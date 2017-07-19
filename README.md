@@ -4,6 +4,10 @@ Random python things that I've written, while learning. Probably nothing excitin
 ## convert-seconds.py
 Convert seconds to human-speak.
 
+Games:
+## adventure.py
+Simple text adventure.
+
 ## hangman.py
 Simple hangman example.
 
