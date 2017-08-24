@@ -5,15 +5,15 @@ Random python things that I've written, while learning. Probably nothing excitin
 ### games/adventure.py
 Simple text adventure.
 
-### hangman.py
+### games/hangman.py
 Simple hangman example.
 
-### hanoi.py
+### games/hanoi.py
 Towers of Hanoi example solution.
 
-### roll.py 
+### games/roll.py
 Simple dice roller example. Python 2.7 PEP8 game
 
 ## Utilities
-### convert-seconds.py
+### utilities/convert-seconds.py
 Convert seconds to human-speak.
