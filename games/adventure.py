@@ -18,6 +18,7 @@ verbs = ["climb", "close", "go", "grab", "look", "open", "put", "take"]
 # new verbs: run, get, enter, drop
 
 def clearScreen():
+    "clearScreen uses the cheesiest method to clear the screen."
     print ("\n" * 100)
     return
 
@@ -64,7 +65,7 @@ def failText():
     return
 
 clearScreen()
-playerName = raw_input("Who goes there? (Enter your name) ")
+playerName = raw_input("Who goes there, adventurer? (Enter your name) ")
 print("Welcome to Adventure, " + playerName + "!\n")
 
 print(greeting)
