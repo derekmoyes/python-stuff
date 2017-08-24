@@ -8,6 +8,9 @@ Simple text adventure.
 ### hangman.py
 Simple hangman example.
 
+### hanoi.py
+Towers of Hanoi example solution.
+
 ### roll.py 
 Simple dice roller example. Python 2.7 PEP8 game
 
