@@ -19,7 +19,7 @@ print("Start guessing...")
 time.sleep(0.5)
 
 # set the secret
-word = "hangman"
+word = "secret"
 
 # empty
 guesses = ''
@@ -56,6 +56,7 @@ while turns > 0:
     if len(guess) > 1:
         print("Hey, no cheating!")
         guess = "2"
+        turns -= 1
 
     guesses += guess
 

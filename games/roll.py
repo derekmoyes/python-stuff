@@ -18,8 +18,8 @@ roll_again = "yes"
 while roll_again == "yes" or roll_again == "y":
     roller = int(raw_input("How many dice should I roll? "))
     print("Rolling the dice...")
-    print("The values are...")
     print("Let me roll those " + str(roller) + " dice for you!")
+    print("The values are...")
     while roller > 0:
         value = (random.randint(min, max))
         sys.stdout.write(str(value) + ", ")
