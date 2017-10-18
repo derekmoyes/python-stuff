@@ -13,7 +13,7 @@ Your head hurts and you seem to be alone.
 As the only window appears painted over, you can't tell whether it's night or day.
 
 Oh, and your watch seems to be missing.\n"""
-nouns = ["cue", "door", "exit", "kitchen", "stairs", "window"]
+nouns = ["cue", "door", "exit", "kitchen", "stairs", "window", "hallway", "greatroom", "notebook"]
 verbs = ["climb", "close", "go", "grab", "look", "open", "put", "take"]
 # new verbs: run, get, enter, drop
 
@@ -86,9 +86,10 @@ while not done:
         locationtext = "You are now in what looks like the pub's kitchen. " \
                        "The pub must be closed, although the kitchen still " \
                        "smells like supper. There's an exit to the hallway, " \
-                       "and a swinging door leads to the pub's Great Room."
+                       "and a swinging door leads to the pub's Greatroom."
     if currentLocation == "pubGreatRoom":
-        locationtext = "The local"
+        locationtext = "The local pub is closed, so no one's here. A notebook" \
+                       "lies open on a table across the room."
 
     if equipped == "broken pool cue":
         locationtext = locationtext + " You are holding a broken pool cue."
@@ -228,11 +229,7 @@ while not done:
         if action == "go":
             if (thing == "exit" or thing == "kitchen"):
                 currentLocation = "pubKitchen"
-                clearScreen()
-                print("You walk into the noisy kitchen and your eardrum "
-                      "bursts due to the awful noise.")
-                deathText()
-                done = True
+                print("The chef looks at you funny.")
                 continue
             if thing == "stairs":
                 currentLocation = "basement"
@@ -248,9 +245,29 @@ while not done:
                 currentLocation = "pubHallway"
                 print("You walk back into the hallway.")
                 continue
-            if thing == "exit":
+            if thing == "greatroom":
+                clearScreen()
                 currentLocation = "pubGreatRoom"
                 print("You exit the kitchen into the Great Room.")
+                continue
+            else:
+                failText()
+                continue
+
+    if currentLocation == "pubGreatroom":
+        if action == "go":
+            if (thing == "kitchen"):
+                currentLocation = "pubGreatroom"
+                print("You walk back into the kitchen.")
+                continue
+            if thing == "exit":
+                clearScreen()
+                print("You walk into the noisy greatroom and your eardrum "
+                      "bursts due to the awful noise.")
+                deathText()
+                done = True
+#                currentLocation = "pubGreatRoom"
+#                print("You exit the kitchen into the Great Room.")
                 continue
             else:
                 failText()
