@@ -246,7 +246,6 @@ while not done:
                 print("You walk back into the hallway.")
                 continue
             if thing == "greatroom":
-                clearScreen()
                 currentLocation = "pubGreatRoom"
                 print("You exit the kitchen into the Great Room.")
                 continue
@@ -254,10 +253,10 @@ while not done:
                 failText()
                 continue
 
-    if currentLocation == "pubGreatroom":
+    if currentLocation == "pubGreatRoom":
         if action == "go":
             if (thing == "kitchen"):
-                currentLocation = "pubGreatroom"
+                currentLocation = "pubKitchen"
                 print("You walk back into the kitchen.")
                 continue
             if thing == "exit":
