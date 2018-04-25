@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Simple dice roller example.
+
+Converted to Python3...
 """
 
 import random
