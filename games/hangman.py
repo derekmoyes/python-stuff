@@ -6,8 +6,7 @@ import random
 
 debug = False
 
-# Load the word list (*nix method)
-# https://stackoverflow.com/questions/18834636/random-word-generator-python
+# Load the word list (*nix method) https://stackoverflow.com/questions/18834636/random-word-generator-python
 word_file = "/usr/share/dict/words"
 words = open(word_file).read().splitlines()
 # Ignore any words that start with uppercase letters.
@@ -24,7 +23,7 @@ if debug == True:
 max = len(lower_words)
 print("I'm hangman, and I currently know", max, "words.")
 
-# Welcome the user
+# Welcome the user.
 name = input("What is your name? ")
 
 # Set the secret word, by picking a random number between 1 and the max word loaded.
@@ -39,13 +38,13 @@ print("I've selected a random word from the dictionary,", name + ". Time to play
 # This is the list of guesses the user will enter.
 guesses = ''
 
-# Set the number of turns
+# Set the number of turns.
 turns = 10
 
 while turns > 0:
     # Counter
     failed = 0
-    # Check word
+    # Check word.
     for char in word:
         if char in guesses:
             print(char, " ", end='');
@@ -65,9 +64,10 @@ while turns > 0:
     guess = input("\nGuess a character: ")
 
     if len(guess) > 1:
-        print("Hey, no cheating! Enter only one letter at a time.")
-        guess = "2"
+        guess = ""
         turns -= 1
+        print("Hey, no cheating! Enter only one letter at a time.")
+        print("You have", + turns, "guesses left.")
 
     guesses += guess
     guesses = sorted(guesses)
