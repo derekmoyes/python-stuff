@@ -22,7 +22,7 @@ lower_words = [word for word in words if word[0].islower()]
 
 max = len(lower_words)
 
-print("Loaded", max, "words.")
+print("Loaded", max, "words.\n")
 
 # Welcome the user
 name = input("What is your name? ")
@@ -57,9 +57,10 @@ while turns > 0:
         # exit the script
         break
 
-    print
+    if len(guesses) > 0:
+        print("\nSo far, you've guessed the following letters:", guesses)
 
-    guess = input("\nguess a character: ")
+    guess = input("\nGuess a character: ")
 
     if len(guess) > 1:
         print("Hey, no cheating!")
@@ -67,6 +68,7 @@ while turns > 0:
         turns -= 1
 
     guesses += guess
+    guesses = sorted(guesses)
 
     if guess not in word:
 
@@ -75,4 +77,4 @@ while turns > 0:
         print("Wrong\n")
         print("You have", + turns, "guesses left.")
         if turns == 0:
-            print(name, "you lose!\n The word you were looking for was", word)
+            print(name, "you lose!\nThe word you were looking for was", word, "!")
