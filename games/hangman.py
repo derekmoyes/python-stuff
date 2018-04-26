@@ -1,7 +1,5 @@
 """
-Simple hangman example.
-
-Added a word list.
+Simple hangman example. Added a word list, but only for *nix at this time.
 """
 
 import random
