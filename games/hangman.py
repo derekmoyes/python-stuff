@@ -1,42 +1,51 @@
 """
 Simple hangman example.
+
+Added a word list.
 """
 
-# import the time
+import random
 import time
 
-# welcome the user
+# Load the word list (*nix method)
+# https://stackoverflow.com/questions/18834636/random-word-generator-python
+word_file = "/usr/share/dict/words"
+words = open(word_file).read().splitlines()
+# Ignore any words that start with uppercase letters.
+lower_words = [word for word in words if word[0].islower()]
+
+# Print the word list, for debugging...
+#x = 0
+#for w in lower_words:
+#    print(str(w).replace("'b",""))
+#    x += 1
+
+max = len(lower_words)
+
+print("Loaded", max, "words.")
+
+# Welcome the user
 name = input("What is your name? ")
 
-print("Hello, ", name, "Time to play hangman!")
+print("Hello, ", name, "Time to play hangman!\n")
 
-print("\n")
+# Set the secret word, by picking a random number between 1 and the max word loaded.
+value = (random.randint(1, max))
+word = lower_words[value]
+# Print the secret word for debugging...
+#print(word)
 
-# wait for 1 second
-time.sleep(1)
-
-print("Start guessing...")
-time.sleep(0.5)
-
-# set the secret
-word = "secret"
-
-# empty
+# This is the list of guesses the user will enter.
 guesses = ''
 
-# turns
+# Set the number of turns
 turns = 10
 
-# while
-
-# check if > 0
 while turns > 0:
-    # counter
+    # Counter
     failed = 0
-    # check word
+    # Check word
     for char in word:
-
-        # see
         if char in guesses:
             print(char, " ", end='');
         else:
@@ -62,11 +71,9 @@ while turns > 0:
 
     if guess not in word:
 
-        # decrease
+        # Subtract
         turns -= 1
         print("Wrong\n")
         print("You have", + turns, "guesses left.")
         if turns == 0:
-            print(name, "you lose!\n")
-
-# end
+            print(name, "you lose!\n The word you were looking for was", word)
