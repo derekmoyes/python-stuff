@@ -22,7 +22,7 @@ lower_words = [word for word in words if word[0].islower()]
 
 max = len(lower_words)
 
-print("Loaded", max, "words.\n")
+print("I'm hangman, and I currently know", max, "words.")
 
 # Welcome the user
 name = input("What is your name? ")
@@ -32,7 +32,7 @@ value = (random.randint(1, max))
 word = lower_words[value]
 # Print the secret word for debugging...
 #print(word)
-print("I've selected a random word from the dictionary,", name, ". Time to play hangman!\n")
+print("I've selected a random word from the dictionary,", name + ". Time to play!\n")
 
 # This is the list of guesses the user will enter.
 guesses = ''
@@ -59,11 +59,12 @@ while turns > 0:
 
     if len(guesses) > 0:
         print("\nSo far, you've guessed the following letters:", guesses)
+        print("You have", + turns, "guesses left.")
 
     guess = input("\nGuess a character: ")
 
     if len(guess) > 1:
-        print("Hey, no cheating!")
+        print("Hey, no cheating! Enter only one letter at a time.")
         guess = "2"
         turns -= 1
 
@@ -74,7 +75,6 @@ while turns > 0:
 
         # Subtract
         turns -= 1
-        print("Wrong\n")
-        print("You have", + turns, "guesses left.")
+        print("\nSorry,", guess, "is not in the word.\n")
         if turns == 0:
-            print(name, "you lose!\nThe word you were looking for was", word, "!")
+            print(name, ", you lost!\nThe word you were looking for was", word + "!")
