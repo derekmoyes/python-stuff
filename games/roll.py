@@ -7,8 +7,6 @@ Converted to Python3...
 """
 
 import random
-import sys
-
 
 min = 1
 max = 6
@@ -23,7 +21,7 @@ while roll_again == "yes" or roll_again == "y":
     print("The values are...")
     while roller > 0:
         value = (random.randint(min, max))
-        sys.stdout.write(str(value) + ", ")
+        print(str(value) + ", ", end="", flush=True)
         roller -= 1
 
     roll_again = str.lower(input("\nRoll the dice again? "))
