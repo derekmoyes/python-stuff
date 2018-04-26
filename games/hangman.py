@@ -4,6 +4,8 @@ Simple hangman example. Added a word list, but only for *nix at this time.
 
 import random
 
+debug = False
+
 # Load the word list (*nix method)
 # https://stackoverflow.com/questions/18834636/random-word-generator-python
 word_file = "/usr/share/dict/words"
@@ -11,11 +13,12 @@ words = open(word_file).read().splitlines()
 # Ignore any words that start with uppercase letters.
 lower_words = [word for word in words if word[0].islower()]
 
-# Print the word list, for debugging...
-#x = 0
-#for w in lower_words:
-#    print(str(w).replace("'b",""))
-#    x += 1
+if debug == True:
+    # Print the word list, for debugging...
+    x = 0
+    for w in lower_words:
+        print(str(w).replace("'b",""))
+        x += 1
 
 # Count the number of words, so that we can choose one.
 max = len(lower_words)
@@ -27,8 +30,10 @@ name = input("What is your name? ")
 # Set the secret word, by picking a random number between 1 and the max word loaded.
 value = (random.randint(1, max))
 word = lower_words[value]
-# Print the secret word for debugging...
-#print(word)
+
+if debug == True:
+    # Print the secret word for debugging...
+    print(word)
 print("I've selected a random word from the dictionary,", name + ". Time to play!\n")
 
 # This is the list of guesses the user will enter.
