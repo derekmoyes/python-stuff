@@ -54,7 +54,7 @@ while turns > 0:
             failed += 1
 
     if failed == 0:
-        print("\n", name, "you won!")
+        print("\n", name, "you won! The word was", word + "!")
         # Exit the script early if the user wins.
         break
 
