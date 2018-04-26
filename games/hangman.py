@@ -5,7 +5,6 @@ Added a word list.
 """
 
 import random
-import time
 
 # Load the word list (*nix method)
 # https://stackoverflow.com/questions/18834636/random-word-generator-python
@@ -20,8 +19,8 @@ lower_words = [word for word in words if word[0].islower()]
 #    print(str(w).replace("'b",""))
 #    x += 1
 
+# Count the number of words, so that we can choose one.
 max = len(lower_words)
-
 print("I'm hangman, and I currently know", max, "words.")
 
 # Welcome the user
@@ -53,8 +52,7 @@ while turns > 0:
 
     if failed == 0:
         print("\n", name, "you won!")
-
-        # exit the script
+        # Exit the script early if the user wins.
         break
 
     if len(guesses) > 0:
@@ -72,8 +70,6 @@ while turns > 0:
     guesses = sorted(guesses)
 
     if guess not in word:
-
-        # Subtract
         turns -= 1
         print("\nSorry,", guess, "is not in the word.\n")
         if turns == 0:
