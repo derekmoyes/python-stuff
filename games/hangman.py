@@ -27,13 +27,12 @@ print("Loaded", max, "words.")
 # Welcome the user
 name = input("What is your name? ")
 
-print("Hello, ", name, "Time to play hangman!\n")
-
 # Set the secret word, by picking a random number between 1 and the max word loaded.
 value = (random.randint(1, max))
 word = lower_words[value]
 # Print the secret word for debugging...
 #print(word)
+print("I've selected a random word from the dictionary,", name, ". Time to play hangman!\n")
 
 # This is the list of guesses the user will enter.
 guesses = ''
