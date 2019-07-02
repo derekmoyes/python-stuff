@@ -86,6 +86,6 @@ while True:
         print (str(hour) + " hours, and ")
     if minute > 0:
         print (str(minute) + " minutes, and")
-        print (str(second) + " seconds")
+    print (str(second) + " seconds")
 
 print ("Aww, come back later!\n")
