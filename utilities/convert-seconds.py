@@ -1,3 +1,5 @@
+#python3
+
 """
 Convert seconds to human-speak. I modified another example program I had written
   for a training class I took. This was to fulfill a challenge posed to me by a
@@ -9,15 +11,15 @@ Convert seconds to human-speak. I modified another example program I had written
 debug = False
 
 if debug == True:
-    print "minute: 60 seconds, hour: 3,600 seconds, day: 86,400 seconds"
-    print "week: 604,800 seconds, month (30 days): 2,592,000 seconds"
-    print "year (365 days): 31,536,000 seconds"
-    print "decade (365 days x 10): 315,360,000 seconds"
-    print "century (365 days x 10 x 10): 3,153,600,000 seconds"
+    print ("minute: 60 seconds, hour: 3,600 seconds, day: 86,400 seconds")
+    print ("week: 604,800 seconds, month (30 days): 2,592,000 seconds")
+    print ("year (365 days): 31,536,000 seconds")
+    print ("decade (365 days x 10): 315,360,000 seconds")
+    print ("century (365 days x 10 x 10): 3,153,600,000 seconds")
 
 while True:
-    seconds_input = raw_input('\nEnter the number of seconds, and I will '
-                              'convert it to real-time,\nor enter q to quit: ')
+    seconds_input = input('Enter the number of seconds, and I will convert it to real-time, or enter q to quit: ')
+                                 
     if seconds_input == "q" or seconds_input == "Q":
         break
 
@@ -29,14 +31,14 @@ while True:
     day = 0
     hour = 0
     minute = 0
-
+    second = 0
+    
     try:
         seconds_input = int(seconds_input)
     except ValueError:
-        print "You entered {}. Either input a numeric value, " \
-              "or a q.".format(seconds_input)
+        print ("You entered " + str(seconds_input) + " . Either input a numeric value,or a q.")
         continue
-
+        int(seconds_input)
     while seconds_input > 0:
         if seconds_input > 3153599999:
             century += 1
@@ -60,27 +62,30 @@ while True:
             hour += 1
             seconds_input = (seconds_input - 60)
         if seconds_input <= 59:
+            second = seconds_input
             if debug is True:
-                print "add minute. Input is now {}".format(seconds_input)
+                print ("add minute. Input is now {}").format(seconds_input)
             minute += 1
             seconds_input = (seconds_input - 60)
+            
 
-    print "Calculated to: ",
+    print ("Calculated to: "),
     if century > 0:
-        print "{} centuries, and ".format(century),
+        print (str(century) + " centuries, and ")
     if decade > 0:
-        print "{} decades, and ".format(decade),
+        print (str(decade) + " decades, and ")
     if year > 0:
-        print "{} years, and ".format(year),
+        print (str(year) + " years, and ")
     if month > 0:
-        print "{} months, and ".format(month),
+        print (str(month) + " months, and ")
     if week > 0:
-        print "{} weeks, and ".format(week),
+        print (str(week) + " weeks, and ")
     if day > 0:
-        print "{} days, and ".format(day),
+        print (str(day) + " days, and ")
     if hour > 0:
-        print "{} hours, and ".format(hour),
+        print (str(hour) + " hours, and ")
     if minute > 0:
-        print "{} minutes".format(minute),
+        print (str(minute) + " minutes, and")
+    print (str(second) + " seconds")
 
-print "Aww, come back later!\n"
+print ("Aww, come back later!\n")
