@@ -16,7 +16,9 @@ if debug == True:
     # Print the word list, for debugging...
     x = 0
     for w in lower_words:
-        print(str(w).replace("'b",""))
+        # trying to find a way to remove apostrophe and accént aigu. I'm not sure if this is where it needs to go 
+        # but when I run in debug it seems to work.
+        print(str(w).replace("'b","").replace("'","").replace("é","e"))
         x += 1
 
 # Count the number of words, so that we can choose one.
