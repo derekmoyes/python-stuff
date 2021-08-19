@@ -1,11 +1,12 @@
 #python3
 
 """
-Convert seconds to human-speak. I modified another example program I had written
-  for a training class I took. This was to fulfill a challenge posed to me by a
-  co-worker. It may not be the most elegant way to do it, and after I finished,
-  I realized there might be a python library to do this. While I didn't find
-  one, I did locate this page, which has some other interesting solutions.
+Convert seconds to human-speak. I modified another example program I had
+  written for a training class I took. This was to fulfill a challenge posed to
+  me by a co-worker. It may not be the most elegant way to do it, and after I
+  finished, I realized there might be a python library to do this. While I
+  didn't find one, I did locate this page, which has some other interesting
+  solutions.
   http://stackoverflow.com/questions/4048651/python-function-to-convert-seconds-into-minutes-hours-and-days
 """
 debug = False
@@ -19,7 +20,7 @@ if debug == True:
 
 while True:
     seconds_input = input('Enter the number of seconds, and I will convert it to real-time, or enter q to quit: ')
-                                 
+
     if seconds_input == "q" or seconds_input == "Q":
         break
 
@@ -32,7 +33,7 @@ while True:
     hour = 0
     minute = 0
     second = 0
-    
+
     try:
         seconds_input = int(seconds_input)
     except ValueError:
@@ -67,7 +68,6 @@ while True:
                 print ("add minute. Input is now {}").format(seconds_input)
             minute += 1
             seconds_input = (seconds_input - 60)
-            
 
     print ("Calculated to: "),
     if century > 0:
