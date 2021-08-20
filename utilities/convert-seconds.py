@@ -9,25 +9,33 @@ Convert seconds to human-speak. I modified another example program I had
   http://stackoverflow.com/questions/4048651/python-function-to-convert-seconds-into-minutes-hours-and-days
 """
 
-debug=True
+debug=False
+# Adjust these variables for your environment.
+DebugString        = "==> DEBUG:"
 
-if debug == True:
+
+if debug:
   print("""
     minute  : 60 seconds,
     hour    : 3,600 seconds,
     day     : 86,400 seconds,
-    week    : 604,800 seconds, 
-    month   : (30 days): 2,592,000 seconds
-    year    : (365 days): 31,536,000 seconds
-    decade  : (365 days x 10): 315,360,000 seconds
-    century : (365 days x 10 x 10): 3,153,600,000 seconds
+    week    : 604,800 seconds,
+    month   : 2,629,800 seconds,
+    year    : 31,557,600 seconds,
+    decade  : 315,576,000 seconds,
+    century : 3,155,760,000 seconds
       """)
 
+
 while True:
-  seconds_input = input('Enter the number of seconds, and I will convert it to real-time, or enter q to quit: ')
+  seconds_input = input(
+"""
+Enter the number of seconds, and I will convert it to human readable
+time, or the letter [Q/q] to quit: """
+)
 
   if debug:
-    print("Your input: %s" % seconds_input)
+    print("%s Your input: %s" % (DebugString, seconds_input))
 
   if seconds_input == "q" or seconds_input == "Q":
     break
@@ -41,58 +49,98 @@ while True:
   hour=0
   minute=0
   second=0
+  buildoutput=""
 
   try:
     seconds_input = int(seconds_input)
   except ValueError:
-    print("You entered " + str(seconds_input) + " . Either input a numeric value,or a q.")
+    print("You entered %s. That's not a integer." % seconds_input)
     continue
     int(seconds_input)
   while seconds_input > 0:
-    if seconds_input > 3153599999:
-      century += 1
-      seconds_input = (seconds_input - 3153599999)
-    if seconds_input > 315359999 and seconds_input <= 3153599999:
-      decade += 1
-      seconds_input = (seconds_input - 315359999)
-    if seconds_input > 2591999 and seconds_input <= 315359999:
-      year += 1
-      seconds_input = (seconds_input - 2591999)
-    if seconds_input > 604799 and seconds_input <= 2591999:
-      month += 1
-      seconds_input = (seconds_input - 604799)
-    if seconds_input > 86399 and seconds_input <= 604799:
-      week += 1
-      seconds_input = (seconds_input - 86399)
-    if seconds_input > 3599 and seconds_input <= 86399:
-      day += 1
-      seconds_input = (seconds_input - 3599)
-    if seconds_input > 60 and seconds_input <= 3599:
-      hour += 1
-      seconds_input = (seconds_input - 60)
-    if seconds_input <= 59:
-      second = seconds_input
-      if debug is True:
-        print("Your input was under one minute.")
-    seconds_input = (seconds_input - 60)
 
-  print("Calculated to: "),
+    if seconds_input >= 3155760000:
+      if debug:
+        print("%s century" % DebugString)
+      century += 1
+      seconds_input = (seconds_input - 3155760000)
+
+    if seconds_input > 315575999 and seconds_input <= 3155759999:
+      if debug:
+        print("%s decade" % DebugString)
+      decade += 1
+      seconds_input = (seconds_input - 315576000)
+
+    if seconds_input > 31557599 and seconds_input <= 315575999:
+      if debug:
+        print("%s year" % DebugString)
+      year += 1
+      seconds_input = (seconds_input - 31557600)
+
+    if seconds_input > 2629799 and seconds_input <= 31557599:
+      if debug:
+        print("%s month" % DebugString)
+      month += 1
+      seconds_input = (seconds_input - 2629800)
+
+    if seconds_input > 604799 and seconds_input <= 2629799:
+      if debug:
+        print("%s week" % DebugString)
+      week += 1
+      seconds_input = (seconds_input - 604800)
+
+    if seconds_input > 86399 and seconds_input <= 604799:
+      if debug:
+        print("%s day" % DebugString)
+      day += 1
+      seconds_input = (seconds_input - 86400)
+
+    if seconds_input > 3599 and seconds_input <= 86399:
+      if debug:
+        print("%s hour" % DebugString)
+      hour += 1
+      seconds_input = (seconds_input - 3600)
+
+    if seconds_input > 59 and seconds_input <= 3599:
+      if debug:
+        print("%s minute" % DebugString)
+      minute += 1
+      if debug:
+        print("%s Minute: %s" % (DebugString, minute))
+        print("%s Subtracting one minute..." % DebugString)
+      if seconds_input > 0:
+        seconds_input = (seconds_input - 60)
+
+    if seconds_input > 0 and seconds_input <= 59:
+      if debug:
+        print("%s Second: %s" % (DebugString, second))
+        print("%s Setting seconds..." % DebugString)
+        print("%s Subtracting 60 seconds..." % DebugString)
+      second = seconds_input
+      seconds_input = (seconds_input - 60)
+
+
   if century > 0:
-      print(str(century) + " centuries, and ")
+    buildoutput = (str(century) + " centuries, ")
   if decade > 0:
-      print(str(decade) + " decades, and ")
+    buildoutput = buildoutput + (str(decade) + " decades, ")
   if year > 0:
-      print(str(year) + " years, and ")
+    buildoutput = buildoutput + (str(year) + " years, ")
   if month > 0:
-      print(str(month) + " months, and ")
+    buildoutput = buildoutput + (str(month) + " months, ")
   if week > 0:
-      print(str(week) + " weeks, and ")
+    buildoutput = buildoutput + (str(week) + " weeks, ")
   if day > 0:
-      print(str(day) + " days, and ")
+    buildoutput = buildoutput + (str(day) + " days, ")
   if hour > 0:
-      print(str(hour) + " hours, and ")
+    buildoutput = buildoutput + (str(hour) + " hours, ")
   if minute > 0:
-      print(str(minute) + " minutes, and")
-  print (str(second) + " seconds")
+    buildoutput = buildoutput + (str(minute) + " minutes, ")
+  if second == 1:
+    buildoutput = buildoutput + (str(second) + " second")
+    second = -42
+  if second == 0 or second > 0:
+    buildoutput = buildoutput + (str(second) + " seconds")
+  print("Calculated to: %s." % buildoutput)
 
 print("Aww, come back later!\n")
