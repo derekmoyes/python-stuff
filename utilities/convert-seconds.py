@@ -25,6 +25,8 @@ if debug:
     year    : 31,557,600 seconds,
     decade  : 315,576,000 seconds,
     century : 3,155,760,000 seconds
+
+    Numbers taken from DuckDuckGo search engine.
       """ % DebugString)
 
 # Start.
