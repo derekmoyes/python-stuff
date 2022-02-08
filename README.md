@@ -17,3 +17,6 @@ Simple dice roller example. Python 2.7 PEP8 game
 ## Utilities
 ### utilities/convert-seconds.py
 Convert seconds to human-speak.
+
+### utilities/convert-temp.py
+Convert F to C, for now.
