@@ -1,22 +1,26 @@
 # python-stuff
 Random python things that I've written, while learning. Probably nothing exciting here, unless you are learning, too.
 
-## Games:
-### games/adventure.py
-Simple text adventure.
+## Games
 
-### games/hangman.py
-Simple hangman example.
+### Simple text adventure.
+games/adventure.py
 
-### games/hanoi.py
-Towers of Hanoi example solution.
+### A few simple hangman examples.
+games/hangman.py
+games/hangman-chatgpt.py
+games/hangman-simple.py
 
-### games/roll.py
-Simple dice roller example. Python 2.7 PEP8 game
+### Towers of Hanoi example solution.
+games/hanoi.py
+
+### Simple dice roller example. Python 2.7 PEP8 game
+games/roll.py
 
 ## Utilities
-### utilities/convert-seconds.py
-Convert seconds to human-speak.
 
-### utilities/convert-temp.py
-Convert F to C, for now.
+### Convert seconds to human-speak.
+utilities/convert-seconds.py
+
+### Convert F to C, for now.
+utilities/convert-temp.py
