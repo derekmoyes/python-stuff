@@ -7,8 +7,14 @@ import random
 debug = False
 
 # Load the word list (*nix method) https://stackoverflow.com/questions/18834636/random-word-generator-python
+#
+# If you are not using a *nix box, like Linux or a Mac, you can download a similar words file here:
+# https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt
+# You'll have to change the path here, formatted for Windows, and pointing to where you downloaded the file.
 word_file = "/usr/share/dict/words"
+
 words = open(word_file).read().splitlines()
+
 # Ignore any words that start with uppercase letters.
 lower_words = [word for word in words if word[0].islower()]
 
