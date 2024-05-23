@@ -1,5 +1,5 @@
 """
-Simple hangman example. Added a word list, but only for *nix at this time.
+Simple hangman example. Added a word list.
 """
 
 import random
@@ -10,7 +10,7 @@ debug = False
 #
 # If you are not using a *nix box, like Linux or a Mac, you can download a similar words file here:
 # https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt
-# You'll have to change the path here, formatted for Windows, and pointing to where you downloaded the file.
+# You'll have to change the path here, formatted for Windows, and pointing to where you saved the file.
 word_file = "/usr/share/dict/words"
 
 words = open(word_file).read().splitlines()
