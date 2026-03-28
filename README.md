@@ -24,3 +24,8 @@ utilities/convert-seconds.py
 
 ### Convert F to C, for now.
 utilities/convert-temp.py
+
+## z-AI 
+
+Just some toys that AI helped me write, but they're neat and I didn't want to 
+  lose them. 
